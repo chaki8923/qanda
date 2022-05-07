@@ -26,7 +26,6 @@ class QuestionsController < ApplicationController
       #showへリダイレクト
      redirect_to @question
     else
-    
       render 'new',status: :unprocessable_entity
     end
   end

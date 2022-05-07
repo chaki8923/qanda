@@ -8,13 +8,13 @@ h1.p-new__title 質問詳細
   .c-card__body
     p.c-card__text  = @question.content
 .c-card
-  h2.p-new__title 回答一覧
+  h2.p-new__title  回答一覧
   - @question.answers.each do |answer|
-
-      = simple_format('名前:　' + answer.name,class: 'c-card__title')
-      .c-card__body
-        p.c-card__text  = answer.content
-        = link_to '削除', [answer.question, answer],class: 'c-card__btn',data:{turbo_method:'delete',turbo_confirm:'削除しますか？'} 
+      - if @answer.errors.blank?
+        = simple_format('名前:　' + answer.name,class: 'c-card__title')
+        .c-card__body
+          p.c-card__text  = answer.content
+          = link_to '削除', [answer.question, answer],class: 'c-card__btn',data:{turbo_method:'delete',turbo_confirm:'削除しますか？'} 
 .c-card
   h2.p-new__title 回答
   = form_with model: [@question, @question.answers.build] do |form|
@@ -23,11 +23,11 @@ h1.p-new__title 質問詳細
         ul.c-error
           li.c-error__list = message
     .p-form__group
-      = form.text_field :name,class: 'p-form__input'
+      = form.text_field :name,class: 'p-form__input',:value => @answer.name
       = form.label :name,class: 'p-form__label'
     span.c-focus_line
     .p-form__group
-      = form.text_area :content, rows:20,class: 'p-form__textarea'
+      = form.text_area :content, rows:20,class: 'p-form__textarea',:value => @answer.content
       = form.label :content,class: 'p-textform__label'
     = form.submit nil,class: 'p-form__btn',data: {turbo: false}
   = link_to 'back',questions_path,class: 'c-card__btn'
