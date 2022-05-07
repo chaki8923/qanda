@@ -1,0 +1,172 @@
+//新規登録、ログインフォーム
+.p-form{
+  width: 640px;
+  padding: 16px 10px;
+  margin:  auto;
+
+
+
+  &__input {
+    padding: 4px .3em;
+    border: 0;
+    border-bottom: 1px solid #1b2538;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+  }
+
+  &__group {
+    position: relative;
+    width: 80%;
+    margin: 40px auto;
+  }
+
+  //チルダを使用することで兄弟要素にスタイル当てる
+  &__input
+  {
+    &:focus ~ .c-focus_line{
+      
+      width: 100%;
+      transition: 0.4s;
+   }
+ }
+
+ &__label{
+  position: absolute;
+	z-index: -1;
+	top: -16px;
+	left: 0;
+  transition: 0.3s;
+}
+&__textarea{
+	width: 100%;
+	border: 1px solid #ddd;
+	padding: 4px;
+}
+
+&__input:focus ~ label{
+	font-size: 12px;
+	transition: 0.3s;
+	color: #3c8eda;
+}
+&__btn{
+  background-color: #3c8eda;
+  color: #fff;
+  display: block;
+  border-radius: 2px;
+  margin: auto;
+  width: 40%;
+  padding: 8px 46px;
+  &:hover{
+    cursor: pointer;
+  }
+
+}
+
+&__error{
+	position: absolute;
+  top: -15px;
+  left: 25%;
+  bottom: 0;
+  
+}
+
+&__preview{
+	text-align: center;
+}
+
+&__Imagepreview{
+	width: 340px;
+  height: 440px;
+  margin-bottom: 10px;
+	margin: auto;
+  background: #ddd;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+  p {
+    position: absolute;
+    top: 45%;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+		height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 9;
+  }
+}
+
+&__select{
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid rgb(214, 233, 247);
+  margin-bottom: 16px;
+  position: relative;
+ 
+}
+
+}
+
+
+
+.p-formcard {
+  margin: 60px auto;
+  width: 60%;
+  min-width: 620px;
+
+&__header {
+
+  background: rgb(240, 238, 238);
+
+}
+
+
+&__input {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 4em;
+  &:focus {
+    outline: none;
+  }
+}
+
+}
+
+
+.p-textform__label{
+	position: absolute;
+	z-index: -1;
+	top: -22px;
+	left: 0;
+	transition: 0.3s;
+}
+
+
+.p-form__tweet{
+  width: fit-content;
+  margin: auto;
+}
+
+//inputタグフォーカス時スタイル
+.c-focus_line {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	transition: 0.4s;
+	background-color: #3c8eda;
+}

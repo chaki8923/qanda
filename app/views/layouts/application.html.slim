@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title
+      | Qanda
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  body
+    - if flash.notice.present?
+      .c-alert.c-alert--success.js-alert = flash.notice
+    = yield
+
+ 

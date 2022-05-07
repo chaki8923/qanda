@@ -1,0 +1,9 @@
+h1.p-new__title 質問一覧
+= link_to '新規登録',new_question_path
+- @questions.each do |q|
+  .c-card
+    .c-card__title = q.title
+    .c-card__title = q.name
+    = link_to '詳細', question_path(q),class: 'c-card__btn'
+    = link_to '編集', edit_question_path(q),class: 'c-card__btn'
+    = link_to '削除', question_path(q),class: 'c-card__btn',data:{turbo_method:'delete',turbo_confirm:'削除しますか？'}

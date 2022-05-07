@@ -1,0 +1,11 @@
+.c-alert{
+  text-align: center;
+  padding: 24px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  &--success{
+    background: rgba(14, 230, 86, 0.7);
+  }
+}

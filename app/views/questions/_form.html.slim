@@ -1,0 +1,17 @@
+= form_with model: @question do |form|
+  - if @question.errors.any?
+    - @question.errors.full_messages.each do |message|
+      ul.c-error
+        li.c-error__list = message
+  .p-form__group
+    = form.text_field :title,class: 'p-form__input'
+    = form.label :title,class: 'p-form__label'
+    span.c-focus_line
+  .p-form__group
+    = form.text_field :name,class: 'p-form__input'
+    = form.label :name,class: 'p-form__label'
+    span.c-focus_line
+  .p-form__group
+    = form.text_area :content, rows:20,class: 'p-form__textarea'
+    = form.label :content,class: 'p-textform__label'
+  = form.submit nil,class: 'p-form__btn',data: { turbo: false }
